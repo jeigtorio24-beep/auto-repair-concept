@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mr Mechanic Auto Service Center · Pasig (concept)</title>
+<meta name="description" content="Concept redesign: auto repair and auto electrical at the Metrowalk complex, Meralco Ave, Pasig. Diagnostics, starting problems, oil changes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2318202b'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%231f52e0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+html,body{background:#f4f1e9;color:#18202b}
+:root{
+  --paper:#f4f1e9;--grid:rgba(24,32,43,.07);--ink:#18202b;--ink-70:rgba(24,32,43,.72);--ink-45:rgba(24,32,43,.45);
+  --line:rgba(24,32,43,.16);--spark:#1f52e0;--spark-soft:#dfe6fb;--white:#fffdf8;
+  --gut:clamp(20px,4vw,56px);--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0}
+html{overflow-x:clip;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{font:400 17px/1.6 Manrope,"Helvetica Neue",Arial,sans-serif;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;background-position:-1px -1px}
+::selection{background:rgba(31,82,224,.2)}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.mono{font:500 12px/1.3 "JetBrains Mono",ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px 6px 6px;background:var(--white);border:1px solid var(--line);font:500 12px/1 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);white-space:nowrap;text-decoration:none;box-shadow:0 1px 0 rgba(24,32,43,.06),3px 3px 0 rgba(24,32,43,.05);transition:border-color .25s,box-shadow .25s,opacity .3s}
+.tag b{display:grid;place-items:center;min-width:24px;height:20px;padding:0 4px;background:var(--spark-soft);color:var(--spark);font-weight:500;transition:background-color .25s,color .25s}
+.tag.is-on{border-color:var(--spark);box-shadow:3px 3px 0 rgba(31,82,224,.18)}.tag.is-on b{background:var(--spark);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:14px;min-height:56px;padding:12px 14px 12px 26px;border-radius:999px;font:700 15px/1 Manrope,"Helvetica Neue",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background-color .2s,transform .2s}
+.btn i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+.btn svg{width:16px;height:16px}
+.btn--spark{background:var(--spark);color:#fff}.btn--spark i{background:rgba(255,255,255,.22)}
+.btn--spark:hover{background:#163fb3}.btn--spark:hover i{transform:rotate(-45deg)}
+.btn--ghost{color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}.btn--ghost i{background:var(--ink);color:var(--paper)}
+.btn:active{transform:scale(.97)}
+:focus-visible{outline:3px solid var(--spark);outline-offset:3px}
+.js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+@keyframes zap{0%,100%{opacity:0;transform:scale(.6)}10%{opacity:1;transform:scale(1)}30%{opacity:0}}
+@keyframes rise{from{transform:translateY(110%)}to{transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ribbon + header */
+.ribbon{min-height:34px;display:flex;align-items:center;justify-content:center;padding:6px 16px;background:var(--ink);color:rgba(244,241,233,.88);font:500 13px/1.35 Manrope,Arial,sans-serif;text-align:center}
+.hdr{position:relative;z-index:20;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 var(--gut);background:rgba(244,241,233,.92);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark .sq{display:grid;place-items:center;width:34px;height:34px;background:var(--ink);color:var(--paper);font:800 14px/1 Manrope,Arial,sans-serif;letter-spacing:.02em}
+.mark .nm{display:flex;flex-direction:column;line-height:1}
+.mark .nm strong{font:800 20px/1 Manrope,Arial,sans-serif;letter-spacing:-.02em}
+.mark .nm small{font:500 10px/1 "JetBrains Mono",monospace;letter-spacing:.14em;color:var(--ink-45);margin-top:5px}
+.nav{display:none;gap:34px}
+.nav a{font:500 14px/1 Manrope,Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;padding:8px 0;transition:color .2s}
+.nav a:hover{color:var(--spark)}
+.hdr .btn{min-height:46px;padding:8px 8px 8px 20px;font-size:13px;gap:12px}
+@media (min-width:900px){.nav{display:flex}}
+@media (max-width:420px){.hdr .btn .lbl{display:none}.hdr .btn{padding:8px}}
+
+/* hero */
+.stage{position:relative}
+.hero{position:relative;height:calc(100vh - 110px);height:calc(100svh - 110px);min-height:640px;overflow:hidden}
+.pin .stage{height:140vh}
+.pin .hgrid{padding-top:20px;padding-bottom:110px}
+.pin .fig{height:min(calc(100svh - 220px),720px)}
+.pin .hero{position:sticky;top:0;height:100vh;height:100svh;min-height:660px}
+.microrow{position:absolute;z-index:10;top:24px;left:var(--gut);display:flex;align-items:center;gap:14px;font-size:11px;color:var(--ink-45)}
+.microrow span.rl{width:64px;height:1px;background:var(--spark)}
+.hgrid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:clamp(24px,4vw,64px);max-width:1320px;margin:0 auto;height:100%;padding:0 var(--gut)}
+.htext{position:relative;z-index:10;padding-top:40px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;line-height:1;letter-spacing:.16em;margin-bottom:22px}
+.chipn{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);color:var(--spark);background:var(--white);letter-spacing:0;font:500 11px/1 "JetBrains Mono",monospace}
+h1{font:800 clamp(56px,7.4vw,118px)/.9 Manrope,"Helvetica Neue",Arial,sans-serif;letter-spacing:-.045em}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.16em;margin-bottom:-.16em}
+h1 .ln>span{display:block;white-space:nowrap}
+h1 .blue{color:var(--spark)}
+.sub{max-width:30rem;margin-top:26px;font-size:clamp(17px,1.3vw,19px);color:var(--ink-70)}
+.ctas{display:flex;flex-direction:column;align-items:flex-start}
+.ctas .btn{margin-top:32px}
+.seeall{display:inline-block;margin-top:18px;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;padding:6px 0}
+.seeall:hover{color:var(--spark)}
+.js .hdr,.js .microrow{animation:fade .5s var(--ease) both}
+.js .microrow{animation-delay:.1s}
+.js .eyebrow{animation:fade .6s var(--ease) .2s both}
+.js h1 .ln>span{animation:rise .8s var(--ease) both}
+.js h1 .ln:nth-child(1)>span{animation-delay:.3s}.js h1 .ln:nth-child(2)>span{animation-delay:.41s}.js h1 .ln:nth-child(3)>span{animation-delay:.52s}
+.js .sub{animation:fadeUp .6s var(--ease) .65s both}
+.js .ctas .btn{animation:fadeUp .6s var(--ease) .8s both}
+.js .seeall{animation:fade .6s var(--ease) .9s both}
+
+/* drawing */
+.fig{position:relative;justify-self:center;height:min(calc(100svh - 170px),720px);aspect-ratio:640/880;z-index:2}
+.fig>svg.dwg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.dwg .cc{fill:none;stroke:var(--line);stroke-width:1}
+.dwg .arc{fill:none;stroke:var(--spark);stroke-opacity:.3;stroke-width:1.4;stroke-dasharray:120 900}
+.dwg .tick{stroke:var(--ink-45);stroke-width:1}
+.dwg .axis{stroke:var(--ink-45);stroke-width:1;stroke-dasharray:6 6}
+.p{transition:none}
+.p .s,.p .o{stroke:var(--ink);stroke-width:2;stroke-linejoin:round;transition:fill .25s,stroke .25s}
+.p .ln2{fill:none;stroke:var(--ink);stroke-width:1.3;stroke-linecap:round;transition:stroke .25s}
+.p .hl{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;opacity:.85}
+.p .fc{stroke:none;pointer-events:none}
+.p .o{fill:none}
+.p.hot .s{fill:var(--spark-soft)}
+.p.hot .s,.p.hot .o,.p.hot .ln2{stroke:var(--spark)}
+.p.hot .gnd2{stroke:var(--spark-soft)}
+.p .gnd1{fill:none;stroke:var(--ink);stroke-width:8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.p .gnd2{fill:none;stroke:#e8e4db;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.p.hot .gnd1{stroke:var(--spark)}
+.pnum{font:500 10px/1 "JetBrains Mono",monospace;fill:var(--ink-45);letter-spacing:.1em}
+.lead{fill:none;stroke:var(--ink-45);stroke-width:1;transition:stroke .25s}
+.lead+circle{fill:var(--ink);transition:fill .25s}
+.lead.hot{stroke:var(--spark)}.lead.hot+circle{fill:var(--spark)}
+.spark{transform-box:fill-box;transform-origin:center}
+.js .spark{opacity:0}
+.spark.zap{animation:zap 1.6s ease-out}
+.js.nopin .spark{opacity:1}
+.tags{position:absolute;inset:0;z-index:4;pointer-events:none}
+.tags .tag{position:absolute;pointer-events:auto;max-width:46vw}
+.tags .L{right:62%}.tags .R{left:62%}
+.t1{top:48.75%}.t2{top:6.8%}.t3{top:90.9%}.t4{top:73.9%}
+.tags .tag{transform:translateY(-50%)}
+.js .tags .tag{animation:tagIn .5s var(--ease) both}
+.js .tags .L{--dx:-10px}.js .tags .R{--dx:10px}
+.js .t2{animation-delay:1.3s}.js .t1{animation-delay:1.4s}.js .t4{animation-delay:1.5s}.js .t3{animation-delay:1.6s}
+@keyframes tagIn{from{opacity:0;transform:translate(var(--dx),-50%)}to{opacity:1;transform:translate(0,-50%)}}
+.toggle{position:absolute;right:-6%;bottom:2%;display:flex;border:1px solid var(--ink);font:500 10px/1 "JetBrains Mono",monospace;letter-spacing:.14em;background:var(--white);z-index:5}
+.toggle span{padding:7px 9px;transition:background-color .3s,color .3s}
+.toggle .on{background:var(--ink);color:var(--paper)}
+.figcap{position:absolute;right:-6%;top:1%;text-align:right;font-size:10px;color:var(--ink-45);z-index:5;line-height:1.5}
+
+/* sections */
+.sec{position:relative;padding:clamp(88px,11vw,140px) var(--gut)}
+.wrap{max-width:1240px;margin:0 auto}
+h2{font:800 clamp(40px,5.4vw,80px)/.95 Manrope,"Helvetica Neue",Arial,sans-serif;letter-spacing:-.04em}
+h2 .blue{color:var(--spark)}
+.sechead{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;margin-bottom:clamp(40px,5vw,64px)}
+.sechead .side{max-width:22rem;color:var(--ink-70);font-size:16px}
+.rows{list-style:none;padding:0;border-bottom:1px solid var(--line)}
+.row{position:relative;display:grid;grid-template-columns:80px 1fr 1.25fr 132px 48px;gap:24px;align-items:center;padding:28px 12px;border-top:1px solid var(--line);transition:background-color .25s}
+.row:hover{background:rgba(31,82,224,.05)}
+.row .ix{color:var(--ink-45)}
+.row h3{font:800 28px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.02em;transition:transform .25s var(--ease)}
+.row:hover h3{transform:translateX(6px)}
+.row .pt{display:block;margin-top:8px;font-size:10px;color:var(--ink-45);transition:color .25s}
+.row:hover .pt{color:var(--spark)}
+.row:hover .ix{color:var(--spark)}
+.row .ix{font:800 15px/1 Manrope,Arial,sans-serif;letter-spacing:0}
+.row p{font-size:16px;color:var(--ink-70);max-width:34ch}
+.ic{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);color:var(--spark);background:var(--white)}
+.ic svg{width:20px;height:20px}
+.row .pv{position:absolute;right:200px;top:50%;width:240px;height:180px;border:1px solid var(--line);background:var(--white);padding:6px;opacity:0;transform:translateY(calc(-50% + 8px));transition:opacity .2s,transform .2s;pointer-events:none;z-index:3;display:none}
+.row .pv img{width:100%;height:100%;object-fit:cover;object-position:45% 50%}
+.row .pv span{position:absolute;left:12px;bottom:12px;background:var(--paper);padding:4px 6px;font-size:9px}
+@media (min-width:900px) and (hover:hover){.row .pv{display:block}.row:hover .pv,.row:focus-within .pv{opacity:1;transform:translateY(-50%)}}
+.thumb{width:132px;height:88px;background:var(--white);border:1px solid var(--line);padding:6px;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:11px 11px;transition:border-color .25s,transform .25s var(--ease)}
+.thumb .s{stroke:var(--ink);stroke-width:2;stroke-linejoin:round}.thumb .ln2{fill:none;stroke:var(--ink);stroke-width:1.3}.thumb .hl{fill:none;stroke:#fff;stroke-width:3;opacity:.85}.thumb .gnd1{fill:none;stroke:var(--ink);stroke-width:8;stroke-linecap:round}.thumb .gnd2{fill:none;stroke:#e8e4db;stroke-width:4;stroke-linecap:round}
+.row:hover .thumb{border-color:var(--spark);transform:rotate(-2deg)}
+.note{margin-top:22px;font-size:11px;color:var(--ink-45)}
+.rowlink{position:absolute;inset:0;z-index:2}
+
+.sheet{position:relative;background:var(--white);border:1px solid var(--line);padding:clamp(40px,6vw,80px);box-shadow:0 30px 60px -40px rgba(24,32,43,.25)}
+.reg{position:absolute;width:14px;height:14px;border-color:var(--ink-45);border-style:solid;border-width:0}
+.reg.a{top:12px;left:12px;border-top-width:1.5px;border-left-width:1.5px}.reg.b{top:12px;right:12px;border-top-width:1.5px;border-right-width:1.5px}
+.reg.c{bottom:12px;left:12px;border-bottom-width:1.5px;border-left-width:1.5px}.reg.d{bottom:12px;right:12px;border-bottom-width:1.5px;border-right-width:1.5px}
+.sheet .top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:clamp(36px,5vw,56px)}
+.sheet .top .mono{font-size:11px;color:var(--ink-45)}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.why>div{padding:0 clamp(20px,3vw,40px);border-left:1px solid var(--line)}
+.why>div:first-child{padding-left:0;border-left:0}
+.fgr{height:64px;display:flex;align-items:flex-end;font:800 52px/1 Manrope,Arial,sans-serif;color:var(--spark);letter-spacing:-.03em}
+.fgr.sm{font-size:44px}
+.fgr svg{width:52px;height:52px}
+.why .cap{display:block;margin:16px 0 18px;font-size:11px;color:var(--ink-45)}
+.why h3{font:800 26px/1.15 Manrope,Arial,sans-serif;letter-spacing:-.02em;margin-bottom:10px}
+.why p{font-size:16px;color:var(--ink-70)}
+
+.bay{position:relative;margin:0 auto clamp(64px,8vw,104px);max-width:1240px;border:1px solid var(--line);background:var(--white);padding:8px}
+.bay img{width:100%;height:auto;aspect-ratio:21/9;object-fit:cover;object-position:68% 50%;filter:grayscale(.2)}
+.bay .cp{position:absolute;right:20px;bottom:20px;background:var(--paper);padding:6px 8px;font-size:10px}
+.bay .fn{position:absolute;left:20px;top:20px;background:var(--paper);padding:6px 8px;font-size:10px;color:var(--ink-70)}
+.find{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.find h2{margin:22px 0 26px}
+.addr{font-size:18px;max-width:26rem}
+.find .mono.dim{display:block;margin-top:18px;font-size:11px;color:var(--ink-45)}
+.plan{background:var(--white);border:1px solid var(--line);position:relative}
+.plan svg{width:100%;aspect-ratio:4/3;height:auto}
+.plan .pc{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px solid var(--line);font-size:10px;color:var(--ink-45)}
+.find .btn{margin-top:22px}
+
+.contact{background:var(--ink);color:var(--paper);text-align:center;background-image:linear-gradient(rgba(244,241,233,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(244,241,233,.06) 1px,transparent 1px);background-size:28px 28px;background-position:-1px -1px;overflow:hidden}
+.contact .mono{color:rgba(244,241,233,.6);font-size:11px}
+.contact h2{font-size:clamp(48px,8vw,128px);letter-spacing:-.05em;margin:24px 0 clamp(40px,5vw,64px)}
+.contact h2 .lt{color:#8fa8ff}
+.crow{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px}
+.crow a{display:inline-flex;align-items:center;gap:14px;font:700 20px/1.2 Manrope,Arial,sans-serif;text-decoration:none;padding:6px 0;overflow-wrap:anywhere;text-align:left}
+.crow a i{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(244,241,233,.3);transition:background-color .2s,border-color .2s}
+.crow a:hover i{background:var(--spark);border-color:var(--spark)}
+.crow svg{width:18px;height:18px}
+.contact .bigplug{position:absolute;right:-40px;top:50%;transform:translateY(-50%) rotate(90deg);width:180px;opacity:.08;pointer-events:none}
+
+footer{border-top:1px solid var(--line);padding:40px var(--gut);color:var(--ink-70);font-size:14px}
+footer .fw{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 32px}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer nav a{text-decoration:none;padding:4px 0}footer nav a:hover{color:var(--spark)}
+footer .mono{font-size:10px;color:var(--ink-45)}
+footer .ft{display:flex;flex-direction:column;gap:6px}
+
+.callbar{position:fixed;z-index:40;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));height:56px;border-radius:999px;background:var(--spark);color:#fff;display:none;align-items:center;justify-content:center;gap:12px;font:700 15px/1 Manrope,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;box-shadow:0 12px 30px -10px rgba(31,82,224,.6);transition:transform .35s var(--ease),opacity .35s}
+.callbar svg{width:18px;height:18px}
+@media (max-width:767px){.callbar{display:flex}.js .callbar{transform:translateY(140%);opacity:0}.js .callbar.show{transform:none;opacity:1}footer{padding-bottom:92px}}
+
+/* responsive */
+@media (max-height:720px) and (min-width:900px){h1{font-size:clamp(48px,6.4vw,96px)}.fig{height:min(70vh,640px)}}
+@media (max-width:1100px) and (min-width:900px){.toggle{right:0}.figcap{display:none}}
+@media (max-width:899px){
+  .hero{height:auto;min-height:0;overflow:visible}
+  .hgrid{grid-template-columns:1fr;height:auto;padding-top:76px;padding-bottom:48px;gap:40px}
+  .htext{padding-top:0}
+  h1{font-size:9vw}
+  .fig{height:64vh;max-height:720px;justify-self:center}
+  .sechead{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr;gap:36px}
+  .why>div{padding:0;border-left:0;border-top:1px solid var(--line);padding-top:28px}
+  .why>div:first-child{border-top:0;padding-top:0}
+  .find{grid-template-columns:1fr}
+}
+@media (max-width:767px){h1 .ln>span{white-space:normal}}
+@media (max-width:639px){
+  .microrow{font-size:10px;gap:8px;top:20px;right:var(--gut);flex-wrap:wrap}
+  .microrow span.rl{width:24px}
+  .microrow .m2{display:none}
+  h1{font-size:clamp(48px,13vw,72px)}
+  .fig{height:auto;width:100%;min-width:0;overflow:hidden;aspect-ratio:auto;display:flex;flex-direction:column;align-items:center}
+  .fig>svg.dwg{flex:none}
+  .fig>svg.dwg{position:relative;inset:auto;height:60vh;width:auto;aspect-ratio:640/880;max-width:none}
+  .fig .lead,.fig .lead+circle{display:none}
+  .tags{position:relative;inset:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;width:100%;margin-top:18px}
+  .tags .tag{position:relative;inset:auto!important;transform:none!important;animation:none!important;max-width:none;white-space:normal;line-height:1.3;font-size:11px;letter-spacing:.08em}
+  .toggle,.figcap{display:none}
+  .row{grid-template-columns:56px 1fr;gap:6px 14px;padding:24px 4px}
+  .row h3{font-size:24px}
+  .row p{grid-column:2}
+  .thumb{display:none}
+  .row .ic{grid-column:2;grid-row:1;justify-self:end;width:36px;height:36px}
+  .row .tt{grid-column:2;grid-row:1;padding-right:48px}
+  .bay img{aspect-ratio:16/9}
+  .bay .fn{display:none}
+  .bay .cp{right:14px;bottom:14px}
+  .crow{flex-direction:column;align-items:center}
+  .crow a{font-size:15px}
+  .sheet .top{flex-direction:column;align-items:flex-start}
+}
+.done .hdr,.done .microrow,.done .eyebrow,.done h1 .ln>span,.done .sub,.done .ctas .btn,.done .seeall,.done .tags .tag{animation:none!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js [data-reveal]{opacity:1;transform:none}html{scroll-behavior:auto}.js .spark{opacity:1}}
+</style>
+</head>
+<body>
+<div class="ribbon">Concept redesign by Jeig Torio · not the business's official website</div>
+
+<header class="hdr">
+  <a class="mark" href="#top" aria-label="Mr Mechanic Auto Service Center, back to top"><span class="sq">MR</span><span class="nm"><strong>Mechanic</strong><small>AUTO SERVICE CENTER</small></span></a>
+  <nav class="nav" aria-label="Main"><a href="#services">Services</a><a href="#why">Why us</a><a href="#find">Find us</a><a href="#contact">Contact</a></nav>
+  <a class="btn btn--spark" href="tel:+639279519442"><span class="lbl">Call the shop</span><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></i></a>
+</header>
+
+<main id="top">
+<div class="stage" id="stage">
+<section class="hero" aria-labelledby="h1">
+  <p class="microrow mono"><span>PASIG · METROWALK · MERALCO AVE</span><span class="rl" aria-hidden="true"></span><span class="m2">AUTO REPAIR / AUTO ELECTRICAL</span></p>
+  <div class="hgrid">
+    <div class="htext">
+      <p class="eyebrow mono"><span class="chipn">01</span>AUTO REPAIR &amp; AUTO ELECTRICAL</p>
+      <h1 id="h1"><span class="ln"><span>Honest</span></span><span class="ln"><span>diagnosis.</span></span><span class="ln"><span class="blue">Fair price.</span></span></h1>
+      <p class="sub">Diagnostics, auto electrical work, starting problems and oil changes at the Metrowalk complex on Meralco Avenue, Pasig.</p>
+      <div class="ctas">
+        <a class="btn btn--spark" id="heroCta" href="tel:+639279519442">Call +63 927 951 9442<i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 8v9H8"/></svg></i></a>
+        <a class="seeall mono" href="#services">See what we fix ↓</a>
+      </div>
+    </div>
+
+    <figure class="fig" id="fig" aria-label="Exploded line drawing of a spark plug; each part is labelled with a service">
+      <svg class="dwg" viewBox="0 0 640 880" role="img" aria-label="Exploded line drawing of a spark plug">
+        <defs>
+          <linearGradient id="cer" x1="0" x2="1"><stop offset="0" stop-color="#ebe6da"/><stop offset=".26" stop-color="#fffdf8"/><stop offset=".6" stop-color="#f8f4ec"/><stop offset="1" stop-color="#d6cfbf"/></linearGradient>
+          <linearGradient id="met" x1="0" x2="1"><stop offset="0" stop-color="#cbc6bb"/><stop offset=".28" stop-color="#f4f1ea"/><stop offset=".5" stop-color="#e2ded4"/><stop offset=".78" stop-color="#c9c4b8"/><stop offset="1" stop-color="#aaa498"/></linearGradient>
+          <linearGradient id="dark" x1="0" x2="1"><stop offset="0" stop-color="#8f8a80"/><stop offset=".35" stop-color="#cfcabe"/><stop offset="1" stop-color="#7d786e"/></linearGradient>
+          <radialGradient id="glow"><stop offset="0" stop-color="#1f52e0" stop-opacity=".45"/><stop offset="1" stop-color="#1f52e0" stop-opacity="0"/></radialGradient>
+          <clipPath id="thrClip"><path d="M88 362 H152 V520 H88 Z"/></clipPath>
+        </defs>
+        <!-- construction -->
+        <circle class="cc" cx="320" cy="430" r="294"/>
+        <circle class="cc" cx="320" cy="430" r="192"/>
+        <circle class="arc" cx="320" cy="430" r="243" transform="rotate(-62 320 430)"/>
+        <g class="tick" aria-hidden="true">
+          <path d="M320 128v14M320 718v14M18 430h14M608 430h14M128 430h10M502 430h10"/>
+        </g>
+        <path class="axis" d="M320 6V874"/>
+        
+
+        <!-- plug: local coords (0..240), centred at x=120; group offset 200,120 -->
+        <g transform="translate(188 102) scale(1.1)">
+          <g class="p" data-part="terminal" data-gap="-100" transform="translate(0 -100)"><g id="pt-terminal">
+            <path class="s dr" fill="url(#met)" d="M104 22 Q104 16 110 16 H130 Q136 16 136 22 V24 H140 Q142 24 142 26 V38 Q142 40 140 40 H100 Q98 40 98 38 V26 Q98 24 100 24 H104 Z"/>
+            <path class="ln2 dr" d="M98 32 H142"/>
+            <rect class="s dr" fill="url(#met)" x="112" y="40" width="16" height="32" rx="1.5"/>
+            <path class="ln2 dr" d="M112 50 H128 M112 58 H128"/>
+            <path class="hl" d="M107 28 V36"/>
+            </g>
+          </g>
+          <g class="p" data-part="insulator" data-gap="-58" transform="translate(0 -58)"><g id="pt-insulator">
+            <path class="s dr" fill="url(#cer)" d="M102 70 H138 Q140 70 140 72 V84 Q150 86 150 94 Q150 102 144 104 Q150 106 150 114 Q150 122 144 124 Q150 126 150 134 Q150 142 144 144 Q150 146 150 154 Q150 162 144 164 Q150 166 150 174 Q150 182 144 184 L150 264 Q150 270 144 270 H96 Q90 270 90 264 L96 184 Q90 182 90 174 Q90 166 96 164 Q90 162 90 154 Q90 146 96 144 Q90 142 90 134 Q90 126 96 124 Q90 122 90 114 Q90 106 96 104 Q90 102 90 94 Q90 86 100 84 V72 Q100 70 102 70 Z"/>
+            <path class="ln2 dr" d="M90 94 Q120 101 150 94 M90 114 Q120 121 150 114 M90 134 Q120 141 150 134 M90 154 Q120 161 150 154 M90 174 Q120 181 150 174"/>
+            <path class="ln2 dr" d="M96 184 Q120 190 144 184" stroke-opacity=".5"/>
+            <path class="hl" d="M105 196 L102 258"/>
+            <path class="hl" d="M104 88 V98 M104 108 V118 M104 128 V138 M104 148 V158 M104 168 V178" stroke-width="2.4"/></g>
+          </g>
+          <g class="p" data-part="hex" data-gap="-17" transform="translate(0 -17)"><g id="pt-hex">
+            <rect class="s dr" fill="url(#met)" x="90" y="270" width="60" height="12" rx="2"/>
+            <path class="s dr" fill="url(#met)" d="M78 282 H162 L168 288 V340 L162 346 H78 L72 340 V288 Z"/>
+            <path class="fc" d="M73 288 L78 283 H104 V345 H78 L73 340 Z" fill="#18202b" fill-opacity=".09"/>
+            <path class="fc" d="M136 283 H162 L167 288 V340 L162 345 H136 Z" fill="#18202b" fill-opacity=".2"/>
+            <path class="ln2 dr" d="M104 282 V346 M136 282 V346"/>
+            <path class="ln2 dr" d="M72 292 Q120 300 168 292 M72 336 Q120 328 168 336" stroke-opacity=".45"/>
+            <path class="hl" d="M112 290 V338"/>
+            <rect class="s dr" fill="url(#dark)" x="86" y="346" width="68" height="5" rx="1"/></g>
+          </g>
+          <g class="p" data-part="gasket" data-gap="17" transform="translate(0 17)"><g id="pt-gasket">
+            <rect class="s dr" fill="url(#dark)" x="75" y="351" width="90" height="10" rx="5"/>
+            <path class="hl" d="M90 354 H110" stroke-width="2"/></g>
+          </g>
+          <g class="p" data-part="thread" data-gap="58" transform="translate(0 58)"><g id="pt-thread">
+            <path class="s dr" fill="url(#met)" d="M92 362 H148 L152 366 L152 373.5 L156 377 L152 380.5 L152 384.1 L156 387.6 L152 391.1 L152 394.7 L156 398.2 L152 401.7 L152 405.3 L156 408.8 L152 412.3 L152 415.9 L156 419.4 L152 422.9 L152 426.5 L156 430 L152 433.5 L152 437.1 L156 440.6 L152 444.1 L152 447.7 L156 451.2 L152 454.7 L152 458.3 L156 461.8 L152 465.3 L152 468.9 L156 472.4 L152 475.9 L152 479.5 L156 483 L152 486.5 L152 490.1 L156 493.6 L152 497.1 L152 500.7 L156 504.2 L152 507.7 L152 511.3 L156 514.8 L152 518.3 L148 520 H94 L88 514 L88 510.3 L84 506.8 L88 503.3 L88 499.7 L84 496.2 L88 492.7 L88 489.1 L84 485.6 L88 482.1 L88 478.5 L84 475 L88 471.5 L88 467.9 L84 464.4 L88 460.9 L88 457.3 L84 453.8 L88 450.3 L88 446.7 L84 443.2 L88 439.7 L88 436.1 L84 432.6 L88 429.1 L88 425.5 L84 422 L88 418.5 L88 414.9 L84 411.4 L88 407.9 L88 404.3 L84 400.8 L88 397.3 L88 393.7 L84 390.2 L88 386.7 L88 383.1 L84 379.6 L88 376.1 L88 372.5 L84 369 L88 365.5 Z"/>
+            <g clip-path="url(#thrClip)"><path class="ln2 dr" d="M88 369 L152 377 M88 379.6 L152 387.6 M88 390.2 L152 398.2 M88 400.8 L152 408.8 M88 411.4 L152 419.4 M88 422 L152 430 M88 432.6 L152 440.6 M88 443.2 L152 451.2 M88 453.8 L152 461.8 M88 464.4 L152 472.4 M88 475 L152 483 M88 485.6 L152 493.6 M88 496.2 L152 504.2 M88 506.8 L152 514.8"/></g>
+            <path class="fc" d="M134 364 H152 V518 H134 Z" fill="#18202b" fill-opacity=".1" clip-path="url(#thrClip)"/>
+            <path class="hl" d="M104 372 V512" stroke-width="2.4" opacity=".6"/></g>
+          </g>
+          <g class="p" data-part="electrode" data-gap="100" transform="translate(0 100)"><g id="pt-electrode">
+            <path class="s dr" fill="url(#cer)" d="M106 520 H134 L128 536 H112 Z"/>
+            <rect class="s dr" fill="url(#dark)" x="116.5" y="534" width="7" height="38" rx="2"/>
+            <path class="gnd1" d="M140 520 V570 Q140 582 128 582 H114"/>
+            <path class="gnd2" d="M140 520 V570 Q140 582 128 582 H114"/>
+<g transform="translate(120 577) scale(1.5) translate(-120 -577)">            <g class="spark">
+              <circle cx="120" cy="577" r="26" fill="url(#glow)"/>
+              <path d="M124 562 L112 579 H119 L115 592 L128 574 H121 Z" fill="#1f52e0" stroke="#fffdf8" stroke-width="1.2" stroke-linejoin="round"/>
+            </g></g></g>
+          </g>
+        </g>
+
+        <!-- leaders (exploded positions) -->
+        <g class="leads">
+          <path class="lead" data-for="terminal" d="M296 26 H268 L245 60"/><circle cx="296" cy="26" r="2.5"/>
+          <path class="lead" data-for="hex" d="M373 429 H398"/><circle cx="373" cy="429" r="2.5"/>
+          <path class="lead" data-for="thread" d="M356 650 H398"/><circle cx="356" cy="650" r="2.5"/>
+          <path class="lead" data-for="electrode" d="M315 822 H272 L245 800"/><circle cx="315" cy="822" r="2.5"/>
+        </g>
+      </svg>
+
+      <div class="tags">
+        <a class="tag R t1" href="#services" data-part="hex"><b>01</b>Diagnostics</a>
+        <a class="tag L t2" href="#services" data-part="terminal"><b>02</b>Auto electrical</a>
+        <a class="tag L t3" href="#services" data-part="electrode"><b>03</b>Starting problems</a>
+        <a class="tag R t4" href="#services" data-part="thread"><b>04</b>Oil change</a>
+      </div>
+      <div class="toggle" aria-hidden="true"><span class="ex on">EXPLODED</span><span class="as">ASSEMBLED</span></div>
+      <p class="figcap mono" aria-hidden="true">FIG. 01 · SPARK PLUG<br>CONCEPT DRAWING</p>
+    </figure>
+  </div>
+</section>
+</div>
+
+<section class="sec" id="services" aria-labelledby="h-serv">
+  <div class="wrap">
+    <div class="sechead" data-reveal>
+      <div>
+        <p class="eyebrow mono"><span class="chipn">02</span>WHAT WE FIX</p>
+        <h2 id="h-serv">What we<br><span class="blue">fix.</span></h2>
+      </div>
+      <p class="side">Four jobs the shop is known for. Not sure which one your car needs? Call and describe the problem.</p>
+    </div>
+    <ol class="rows" data-reveal>
+      <li class="row">
+        <span class="ix mono">01</span>
+        <div class="tt"><h3>Diagnostics</h3><span class="pt mono">FIG. 01 · HEX SHELL</span></div>
+        <p>Warning light on, strange noise, something just feels off? The car gets checked first, then you hear what's wrong.</p>
+        <svg class="thumb" viewBox="60 262 120 96" aria-hidden="true" focusable="false"><rect class="s" fill="url(#met)" x="90" y="270" width="60" height="12" rx="2"/>
+            <path class="s" fill="url(#met)" d="M78 282 H162 L168 288 V340 L162 346 H78 L72 340 V288 Z"/>
+            <path class="fc" d="M73 288 L78 283 H104 V345 H78 L73 340 Z" fill="#18202b" fill-opacity=".09"/>
+            <path class="fc" d="M136 283 H162 L167 288 V340 L162 345 H136 Z" fill="#18202b" fill-opacity=".2"/>
+            <path class="ln2" d="M104 282 V346 M136 282 V346"/>
+            <path class="ln2" d="M72 292 Q120 300 168 292 M72 336 Q120 328 168 336" stroke-opacity=".45"/>
+            <path class="hl" d="M112 290 V338"/>
+            <rect class="s" fill="url(#dark)" x="86" y="346" width="68" height="5" rx="1"/></svg>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
+        <span class="pv" aria-hidden="true"><img src="assets/brake-detail.webp" alt="Close-up of a brake caliper and drilled disc" width="900" height="675" loading="lazy"><span class="mono">STOCK PHOTO</span></span>
+      </li>
+      <li class="row">
+        <span class="ix mono">02</span>
+        <div class="tt"><h3>Auto electrical</h3><span class="pt mono">FIG. 01 · TERMINAL</span></div>
+        <p>Wiring, battery and charging problems, handled by an auto electrical shop.</p>
+        <svg class="thumb" viewBox="60 2 120 96" aria-hidden="true" focusable="false"><path class="s" fill="url(#met)" d="M104 22 Q104 16 110 16 H130 Q136 16 136 22 V24 H140 Q142 24 142 26 V38 Q142 40 140 40 H100 Q98 40 98 38 V26 Q98 24 100 24 H104 Z"/>
+            <path class="ln2" d="M98 32 H142"/>
+            <rect class="s" fill="url(#met)" x="112" y="40" width="16" height="32" rx="1.5"/>
+            <path class="ln2" d="M112 50 H128 M112 58 H128"/>
+            <path class="hl" d="M107 28 V36"/></svg>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M7 7V4h3v3M14 7V4h3v3M7 13.5h4M15 11.5v4M13 13.5h4"/></svg></span>
+      </li>
+      <li class="row">
+        <span class="ix mono">03</span>
+        <div class="tt"><h3>Starting problems</h3><span class="pt mono">FIG. 01 · ELECTRODE</span></div>
+        <p>Car won't start, or starts on the third try? Bring it in and have it checked.</p>
+        <svg class="thumb" viewBox="60 508 120 96" aria-hidden="true" focusable="false"><path class="s" fill="url(#cer)" d="M106 520 H134 L128 536 H112 Z"/>
+            <rect class="s" fill="url(#dark)" x="116.5" y="534" width="7" height="38" rx="2"/>
+            <path class="gnd1" d="M140 520 V570 Q140 582 128 582 H114"/>
+            <path class="gnd2" d="M140 520 V570 Q140 582 128 582 H114"/>
+            <g class="spark-s">
+              <circle cx="120" cy="577" r="22" fill="url(#glow)"/>
+              <path d="M124 562 L112 579 H119 L115 592 L128 574 H121 Z" fill="#1f52e0" stroke="#fffdf8" stroke-width="1.2" stroke-linejoin="round"/>
+            </g></svg>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.5 2.5-2.6-.6-.6-2.6z"/></svg></span>
+      </li>
+      <li class="row">
+        <span class="ix mono">04</span>
+        <div class="tt"><h3>Oil change</h3><span class="pt mono">FIG. 01 · THREAD</span></div>
+        <p>Regular oil and filter changes to keep the engine healthy.</p>
+        <svg class="thumb" viewBox="56 370 128 102" aria-hidden="true" focusable="false"><path class="s" fill="url(#met)" d="M92 362 H148 L152 366 L152 373.5 L156 377 L152 380.5 L152 384.1 L156 387.6 L152 391.1 L152 394.7 L156 398.2 L152 401.7 L152 405.3 L156 408.8 L152 412.3 L152 415.9 L156 419.4 L152 422.9 L152 426.5 L156 430 L152 433.5 L152 437.1 L156 440.6 L152 444.1 L152 447.7 L156 451.2 L152 454.7 L152 458.3 L156 461.8 L152 465.3 L152 468.9 L156 472.4 L152 475.9 L152 479.5 L156 483 L152 486.5 L152 490.1 L156 493.6 L152 497.1 L152 500.7 L156 504.2 L152 507.7 L152 511.3 L156 514.8 L152 518.3 L148 520 H94 L88 514 L88 510.3 L84 506.8 L88 503.3 L88 499.7 L84 496.2 L88 492.7 L88 489.1 L84 485.6 L88 482.1 L88 478.5 L84 475 L88 471.5 L88 467.9 L84 464.4 L88 460.9 L88 457.3 L84 453.8 L88 450.3 L88 446.7 L84 443.2 L88 439.7 L88 436.1 L84 432.6 L88 429.1 L88 425.5 L84 422 L88 418.5 L88 414.9 L84 411.4 L88 407.9 L88 404.3 L84 400.8 L88 397.3 L88 393.7 L84 390.2 L88 386.7 L88 383.1 L84 379.6 L88 376.1 L88 372.5 L84 369 L88 365.5 Z"/>
+            <g clip-path="url(#thrClip)"><path class="ln2" d="M88 369 L152 377 M88 379.6 L152 387.6 M88 390.2 L152 398.2 M88 400.8 L152 408.8 M88 411.4 L152 419.4 M88 422 L152 430 M88 432.6 L152 440.6 M88 443.2 L152 451.2 M88 453.8 L152 461.8 M88 464.4 L152 472.4 M88 475 L152 483 M88 485.6 L152 493.6 M88 496.2 L152 504.2 M88 506.8 L152 514.8"/></g>
+            <path class="fc" d="M134 364 H152 V518 H134 Z" fill="#18202b" fill-opacity=".1" clip-path="url(#thrClip)"/>
+            <path class="hl" d="M104 372 V512" stroke-width="2.4" opacity=".6"/></svg>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7S5.5 10 5.5 14.5a6.5 6.5 0 0 0 13 0C18.5 10 12 2.7 12 2.7z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg></span>
+      </li>
+    </ol>
+    <p class="note mono">PRICES: CALL FOR A QUOTE · THIS CONCEPT PAGE DOES NOT LIST PRICES</p>
+  </div>
+</section>
+
+<section class="sec" id="why" aria-labelledby="h-why" style="padding-top:0">
+  <div class="wrap">
+    <div class="sheet" data-reveal>
+      <span class="reg a"></span><span class="reg b"></span><span class="reg c"></span><span class="reg d"></span>
+      <div class="top">
+        <p class="eyebrow mono" style="margin:0"><span class="chipn">03</span><span id="h-why">WHY DRIVERS COME BACK</span></p>
+        <span class="mono">SHEET 03 · WHAT GUESTS MENTION</span>
+      </div>
+      <div class="why">
+        <div>
+          <div class="fgr" aria-hidden="true"><svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"><path d="M8 27 L21 40 L45 12"/></svg></div>
+          <span class="cap mono">A · REPUTATION</span>
+          <h3>Honest diagnosis</h3>
+          <p>Guests describe the mechanic as honest, and that's the reputation the shop runs on.</p>
+        </div>
+        <div>
+          <div class="fgr" aria-hidden="true">₱</div>
+          <span class="cap mono">B · PRICING</span>
+          <h3>Fair pricing</h3>
+          <p>Fair pricing is what customers mention. Ask for a quote before any work.</p>
+        </div>
+        <div>
+          <div class="fgr sm" aria-hidden="true">SUV</div>
+          <span class="cap mono">C · VEHICLES</span>
+          <h3>Everyday cars and SUVs</h3>
+          <p>Guests have brought in everything from compact crossovers to big SUVs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="find" aria-labelledby="h-find" style="padding-top:0">
+  <figure class="bay" data-reveal>
+    <img src="assets/brake-strip.webp" alt="A drilled brake disc and caliper on a car with the wheel off" width="1600" height="686" loading="lazy">
+    <span class="fn mono">FIG. 04 · THE BAY</span>
+    <figcaption class="cp mono">CONCEPT PHOTO · NOT THE SHOP</figcaption>
+  </figure>
+  <div class="wrap find">
+    <div data-reveal>
+      <p class="eyebrow mono"><span class="chipn">04</span>FIND US</p>
+      <h2 id="h-find">Metrowalk complex,<br>Meralco Avenue.</h2>
+      <p class="addr">Mr Mechanic Auto Service Center, Metrowalk complex, Meralco Ave, Pasig</p>
+      <span class="mono dim">CALL AHEAD FOR HOURS AND A SLOT</span>
+    </div>
+    <div data-reveal>
+      <div class="plan">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Schematic site plan: the Metrowalk complex beside Meralco Avenue, with a pin on the complex">
+          <defs>
+            <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V8" stroke="rgba(24,32,43,.14)" stroke-width="1.2"/></pattern>
+            <pattern id="g2" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="rgba(24,32,43,.06)"/></pattern>
+          </defs>
+          <rect width="400" height="300" fill="url(#g2)"/>
+          <!-- road -->
+          <path d="M-10 236 L410 196" stroke="#18202b" stroke-opacity=".12" stroke-width="44"/>
+          <path d="M-10 214 L410 174 M-10 258 L410 218" stroke="#18202b" stroke-width="1.5"/>
+          <path d="M-10 236 L410 196" stroke="#18202b" stroke-width="1" stroke-dasharray="10 8"/>
+          <text x="236" y="236" transform="rotate(-5.44 236 236)" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="2" fill="#18202b">MERALCO AVE</text>
+          <!-- complex block -->
+          <path d="M70 60 H300 V160 H70 Z" fill="url(#hatch)" stroke="#18202b" stroke-width="1.5"/>
+          <path d="M60 50 H310 V176 H60 Z" fill="none" stroke="#18202b" stroke-opacity=".35" stroke-dasharray="4 4"/>
+          <path d="M150 60 V160 M220 60 V160" stroke="#18202b" stroke-opacity=".3"/>
+          <rect x="96" y="96" width="104" height="22" fill="#fffdf8" stroke="#18202b" stroke-width="1"/>
+          <text x="148" y="111" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="2" fill="#18202b">METROWALK</text>
+          <!-- pin -->
+          <circle cx="258" cy="112" r="24" fill="#1f52e0" fill-opacity=".1"/>
+          <path d="M258 126 C250 115 246 108 246 102 a12 12 0 0 1 24 0 c0 6 -4 13 -12 24 z" fill="#1f52e0" stroke="#fffdf8" stroke-width="1.5"/>
+          <circle cx="258" cy="102" r="4" fill="#fffdf8"/>
+          <!-- north arrow -->
+          <g transform="translate(352 46)">
+            <circle r="18" fill="none" stroke="#18202b" stroke-opacity=".35"/>
+            <path d="M0 -14 L6 8 L0 4 L-6 8 Z" fill="#18202b"/>
+            <text y="-22" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#18202b">N</text>
+          </g>
+          <!-- dimension ticks -->
+          <path d="M70 34 V42 M300 34 V42 M70 38 H300" stroke="#18202b" stroke-opacity=".45"/>
+        </svg>
+        <div class="pc mono"><span>SCHEMATIC · NOT TO SCALE</span><span>PASIG</span></div>
+      </div>
+      <a class="btn btn--spark" href="https://www.google.com/maps/search/?api=1&amp;query=Mr+Mechanic+Auto+Service+Center+Metrowalk+Pasig" target="_blank" rel="noopener">Open in Google Maps<i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="contact" aria-labelledby="h-con">
+  <div class="wrap" data-reveal>
+    <p class="mono">05 · CONTACT</p>
+    <h2 id="h-con">Car acting up?<br><span class="lt">Call us.</span></h2>
+    <div class="crow">
+      <a href="tel:+639279519442"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></i>+63 927 951 9442</a>
+      <a href="mailto:mrmechanicautocare.ph@gmail.com"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i>mrmechanicautocare.ph@gmail.com</a>
+      <a href="https://www.facebook.com/profile.php?id=61554155354240" target="_blank" rel="noopener"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V10H5.5v3.5H8V21h3.5v-7.5H14l.5-3.5h-3V8a1 1 0 0 1 1-1H15z"/></svg></i>Mr Mechanic on Facebook</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="fw">
+    <a class="mark" href="#top" aria-label="Back to top"><span class="sq">MR</span><span class="nm"><strong>Mechanic</strong><small>AUTO SERVICE CENTER</small></span></a>
+    <nav aria-label="Footer"><a href="#services">Services</a><a href="#why">Why us</a><a href="#find">Find us</a><a href="#contact">Contact</a></nav>
+    <div class="ft">
+      <span>Concept redesign by Jeig Torio · not the business's official website</span>
+      <span class="mono">DRAWINGS ARE CONCEPT ART · PHOTO IS A STOCK PLACEHOLDER</span>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" id="callbar" href="tel:+639279519442"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call Mr Mechanic</a>
+
+<script>
+(function(){
+  var d=document,root=d.documentElement;root.classList.add('js');
+  setTimeout(function(){root.classList.add('done');},2400);
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var wide=matchMedia('(min-width: 900px)').matches;
+  var pin=wide&&!reduce;
+  root.classList.add(pin?'pin':'nopin');
+
+  // stroke draw-on
+  if(!reduce){
+    var els=d.querySelectorAll('.dwg .dr');
+    els.forEach(function(el,i){
+      var L=0;try{L=el.getTotalLength();}catch(e){}
+      if(!L)return;
+      var part=el.closest('.p'),idx=Array.prototype.indexOf.call(d.querySelectorAll('.dwg .p'),part);
+      el.style.strokeDasharray=L;el.style.strokeDashoffset=L;
+      el.style.transition='stroke-dashoffset 1.4s cubic-bezier(.22,1,.36,1) '+(0.2+idx*0.09)+'s, fill-opacity .6s ease 1.2s, fill .25s, stroke .25s';
+      if(el.classList.contains('s'))el.style.fillOpacity=0;
+    });
+    d.querySelectorAll('.dwg .lead').forEach(function(el,i){
+      var L=el.getTotalLength();el.style.strokeDasharray=L;el.style.strokeDashoffset=L;
+      el.style.transition='stroke-dashoffset .5s cubic-bezier(.22,1,.36,1) '+(1.3+i*.1)+'s, stroke .25s';
+    });
+    requestAnimationFrame(function(){requestAnimationFrame(function(){
+      els.forEach(function(el){el.style.strokeDashoffset=0;el.style.fillOpacity='';});
+      d.querySelectorAll('.dwg .lead').forEach(function(el){el.style.strokeDashoffset=0;});
+      setTimeout(function(){els.forEach(function(el){el.style.strokeDasharray='';el.style.strokeDashoffset='';el.style.transition='';});},3200);
+    });});
+  }
+
+  // part positions (exploded)
+  var parts=[].slice.call(d.querySelectorAll('.dwg .p'));
+  function place(p){parts.forEach(function(g){var gap=+g.dataset.gap;g.setAttribute('transform','translate(0 '+(gap*(1-p)).toFixed(2)+')');});}
+  place(0);
+
+  // hover tags -> parts
+  d.querySelectorAll('.tags .tag').forEach(function(t){
+    var name=t.dataset.part,g=d.querySelector('.dwg .p[data-part="'+name+'"]'),ld=d.querySelector('.lead[data-for="'+name+'"]');
+    function on(){t.classList.add('is-on');g.classList.add('hot');if(ld)ld.classList.add('hot');}
+    function off(){t.classList.remove('is-on');g.classList.remove('hot');if(ld)ld.classList.remove('hot');}
+    t.addEventListener('mouseenter',on);t.addEventListener('mouseleave',off);t.addEventListener('focus',on);t.addEventListener('blur',off);
+  });
+
+  // scroll assembly
+  if(pin){
+    var cur=0,tgt=0,running=false,fired=false,zapT=null;
+    var tags=d.querySelector('.tags'),leads=d.querySelector('.leads'),spark=d.querySelector('.spark');
+    var tEx=d.querySelector('.toggle .ex'),tAs=d.querySelector('.toggle .as');
+    var stage=d.getElementById('stage');
+    function ss(a,b,x){x=Math.min(1,Math.max(0,(x-a)/(b-a)));return x*x*(3-2*x);}
+    function zap(){spark.classList.remove('zap');void spark.getBBox();spark.classList.add('zap');}
+    function readT(){tgt=Math.min(1,Math.max(0,(scrollY)/(0.4*innerHeight)));}
+    function tick(){
+      cur+= (tgt-cur)*0.14; if(Math.abs(tgt-cur)<0.0005)cur=tgt;
+      place(cur);
+      var o=1-ss(.6,.95,cur);tags.style.opacity=o;leads.style.opacity=o;tags.style.pointerEvents=o<.2?'none':'';
+      var as=cur>=.98;
+      if(as&&!fired){fired=true;zap();zapT=setInterval(zap,6000);tEx.classList.remove('on');tAs.classList.add('on');}
+      if(!as&&cur<.9&&fired){fired=false;clearInterval(zapT);tAs.classList.remove('on');tEx.classList.add('on');}
+      if(cur!==tgt){requestAnimationFrame(tick);}else running=false;
+    }
+    function kick(){readT();if(!running){running=true;requestAnimationFrame(tick);}}
+    addEventListener('scroll',kick,{passive:true});addEventListener('resize',kick);kick();
+  }
+
+  // reveals
+  var rv=d.querySelectorAll('[data-reveal]');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;setTimeout(function(){el.classList.add('is-in');},90);io.unobserve(el);}});},{threshold:.2});
+    rv.forEach(function(el){io.observe(el);});
+  }
+  setTimeout(function(){rv.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight)el.classList.add('is-in');});},2500);
+
+  // call bar
+  var cb=d.getElementById('callbar'),cta=d.getElementById('heroCta');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){es.forEach(function(e){cb.classList.toggle('show',!e.isIntersecting&&e.boundingClientRect.top<0);});}).observe(cta);
+  }else cb.classList.add('show');
+})();
+</script>
+</body>
+</html>
